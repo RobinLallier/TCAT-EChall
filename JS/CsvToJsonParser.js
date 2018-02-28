@@ -4,8 +4,10 @@ class CsvToJsonParser {
 
 		//Déclaration des variables
 		this.planning = fs.readFileSync(csvFile, 'utf8');
-		this._planningJson = {};
-		this.finalJsonObject = null;
+		//this._planningJson = {};
+		this.listeArret = null;
+
+		//this.finalJsonObject = null;
 	}
 
 
@@ -20,20 +22,22 @@ class CsvToJsonParser {
 
 	parse(){
 		var tData = this.tokenize();
-		//Pour chaque arrêt, parser puis retourner le nom de l'arrêt voulu
+		//Pour chaque arrêt, parser toutes les horaires et le nom de l'arrêt
 		for (i=0; i === tData.length; i++){
 			let parsedNextLine = parseNextLine(tData[i]);
 		}
 	}
 
 	parsedNextLine(tokenizedLine){
+		let 
 		let separator = /,/;
 		let line = tokenizedLine.split(separator);
 		this._planningJson[arret] = line.shift();
-		let interventionList = [];
+		let horaireList = [];
 		while(line.length > 0){
-			
+			horaireList.push(line);
 		}
+		this._planningJson[horaire] = horaireList;
 	}
 
 
