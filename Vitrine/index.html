@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cameleon - NFC</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto:300,400" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -21,7 +21,7 @@
     	</header>
 
     	<nav>
-    		<img src="logo.png">
+    		<img src="img/logo.png">
 
     		<ul>
                 <li><a href="https://www.facebook.com/cameleonNFC"><i class="fa fa-facebook-square"></i></a></li>
@@ -47,7 +47,7 @@
                     <p>We design hand-in-hand with you the perfect user interface, making it as friendly as possible and allowing your brand to stand out. If you already have yours, we adapt it to fit perfectly on mobile devices, and make it compatible with our stickers.
                 </article>
                 <aside>
-                    <img src="phone.jpeg" alt="user_interface">
+                    <img src="img/phone.jpeg" alt="user_interface">
                 </aside>
             </section>
             <section class="about-element">
@@ -57,7 +57,7 @@
                     <p>Our stickers provide your users immediate access to your platform in one single gesture. Enable NFC on your phone, pass it in front of the sticker. Boom. Nothing more.</p>
                 </article>
                 <aside>
-                    <img src="temporary_nfc.jpeg" alt="nfc_gesture">
+                    <img src="img/temporary_nfc.jpeg" alt="nfc_gesture">
                 </aside>
             </section>
             <section class="about-element">
@@ -67,7 +67,7 @@
                     <p>Find out your customers habits and preferences in one click, by accessing the data collected from every use of the stickers. An easy way to enhance your offer simply and cheaply.</p>
                 </article>
                 <aside>
-                    <img src="data_collection.png" alt="data_collection">
+                    <img src="img/data_collection.png" alt="data_collection">
                 </aside>
             </section>
         </section>
@@ -133,6 +133,7 @@
             </div>
             <footer>
                 <p>Your domain isn't there? That's not a problem! <a href="#contact">Contact us</a> and we can think together on how to implement our solutions to your market!</p>
+            </footer>
     	</section>
 
 
@@ -140,17 +141,17 @@
             <h1>Get in Touch with us</h1>
             <form id="contact_form">
                 <fieldset>
-                    <input type="text" placeholder="Your Name" value="Name" required>
-                    <input type="text" placeholder="Enterprise" value="Enterprise" required>
+                    <input type="text" placeholder="Your Name" required onfocus="if(this.value == 'Name') { this.value = ''; }">
+                    <input type="text" placeholder="Enterprise" onfocus="if(this.value == 'Enterprise') { this.value = ''; }">
                 </fieldset>
-                <input type="email" value="mail" placeholder="Your Mail" required>
-                <textarea rows="4" cols="60" form="contact_form">Your message...</textarea>
-                <input type="submit" value="Send">
+                <input type="email" placeholder="Your Mail" required onfocus="if(this.value == 'Mail') { this.value = ''; }">
+                <textarea rows="4" cols="60" form="contact_form" placeholder="Your message..." onfocus="if(this.value == 'Your message...') { this.value = ''; }"></textarea>
+                <input type="submit" value="Send Message">
             </form>
     	</section>	
 
 
-    	<footer>
+    	<footer id="footer">
     		<div>
     			<p> 2018 © Caméléon. All rights reserved.</p>
     		</div>
@@ -160,5 +161,7 @@
     			</ul>
     		</div>
     	</footer>
-        <script src="viewport.js"></script>
+        <script src="js/viewport.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/scroll.js"></script>
     </body>	
