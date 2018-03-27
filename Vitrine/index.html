@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cameleon - NFC</title>
+        
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto:300,400" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,6 +24,8 @@
     	<nav>
     		<img src="img/logo.png">
 
+
+            
     		<ul>
                 <li><a href="https://www.facebook.com/cameleonNFC"><i class="fa fa-facebook-square"></i></a></li>
                 <li><a href="https://www.linkedin.com/company/cameleon-nfc/"><i class="fa fa-linkedin-square"></i></a></li>
@@ -30,7 +33,9 @@
     			<li><a href="#about">About</a></li>
     			<li><a href="#fields">Fields</a></li>
     			<li><a href="#contact">Contact</a></li>
+                
     		</ul>	
+            <a href="javascript:void(0);" class="menuIcon" onclick="myFunction()">&#9776;</a>
     	</nav>
 
 
@@ -78,57 +83,65 @@
     		<h1>Whoever you are, applications that suit your needs.</h1>
     		<hr/>
             <div class="appli-container">
-        		<div class="appli">
-                    <div class="appli-title">
-                        <i class="material-icons">train</i>
-            			<h2>Transport</h2>
-                    </div>
-        			<p>Bring interactivity to your service
-                        <ul>
-                            <li>Accurate, real-time information for public transports</li>
-                            <li>Be notified when clients are waiting for you</li>
-                            <li>Get accurate feedbacks on offer & demand</li>
-                        </ul>    
-                    </p>
+        		<div class="appli transport">
+                    <article>
+                        <div class="appli-title">
+                            <i class="material-icons">train</i>
+                			<h2>Transport</h2>
+                        </div>
+            			<p>Bring interactivity to your service
+                            <ul>
+                                <li>Accurate, real-time information for public transports</li>
+                                <li>Be notified when clients are waiting for you</li>
+                                <li>Get accurate feedbacks on offer & demand</li>
+                            </ul>    
+                        </p>
+                    </article>
         		</div>
-        		<div class="appli">
-                    <div class="appli-title">
-                        <i class="material-icons">local_mall</i>
-            			<h2>Shop</h2>
-                    </div>
-        			<p>Customize your client's experience
-                        <ul>
-                            <li>Provide personnalized advices</li>
-                            <li>Create devoted customers</li>
-                            <li>Analyze data to enhance your sales</li>
-                        </ul>
-                    </p>
+        		<div class="appli shop">
+                    <article>
+                        <div class="appli-title">
+                            <i class="material-icons">local_mall</i>
+                			<h2>Shop</h2>
+                        </div>
+            			<p>Customize your client's experience
+                            <ul>
+                                <li>Provide personnalized advices</li>
+                                <li>Create devoted customers</li>
+                                <li>Analyze data to enhance your sales</li>
+                            </ul>
+                        </p>
+                    </article>
         		</div>
-        		<div class="appli">
-                    <div class="appli-title">
-                        <i class="material-icons">restaurant</i>
-            			<h2>Restaurant</h2>
-                    </div>
-        			<p>Accelerate your service
-                        <ul>
-                            <li>Centralize your orders gestion</li>
-                            <li>Order. Get served. Pay. From your seat.</li>
-                            <li>Promote your newest features</li>
-                        </ul>    
-                    </p>
+        		<div class="appli restaurant">
+                    <article>
+                        <div class="appli-title">
+                            <i class="material-icons">restaurant</i>
+                			<h2>Restaurant</h2>
+                        </div>
+            			<p>Accelerate your service
+                            <ul>
+                                <li>Centralize your orders gestion</li>
+                                <li>Order. Get served. Pay. From your seat.</li>
+                                <li>Promote your newest features</li>
+                            </ul>    
+                        </p>
+                    </article>
         		</div>
-        		<div class="appli">
-                    <div class="appli-title">
-                        <i class="fa fa-paint-brush"></i>
-            			<h2>Culture</h2>
-                    </div>
-        			<p>Widespread your influence
-                        <ul>
-                            <li>Offer lasting memories to participants</li>
-                            <li>Promote your art, or yourself.</li>
-                            <li>JE SAIS PAS QUOI METTRE A L AIDE</li>
-                        </ul>
-                    </p>
+        		<div class="appli culture">
+                    <article>
+                        <div class="appli-title">
+                            <i class="fa fa-paint-brush"></i>
+                    		<h2>Culture</h2>
+                        </div>
+                		<p>Widespread your influence
+                            <ul>
+                                <li>Offer lasting memories to participants</li>
+                                <li>Promote your art, or yourself.</li>
+                                <li>JE SAIS PAS QUOI METTRE A L AIDE</li>
+                            </ul>
+                        </p>
+                    </article>
         		</div>
             </div>
             <footer>
@@ -139,7 +152,7 @@
 
     	<section id="contact">
             <h1>Get in Touch with us</h1>
-            <form id="contact_form">
+            <form id="contact_form" method="post" action='envoimail.php'>
                 <fieldset>
                     <input type="text" placeholder="Your Name" required onfocus="if(this.value == 'Name') { this.value = ''; }">
                     <input type="text" placeholder="Enterprise" onfocus="if(this.value == 'Enterprise') { this.value = ''; }">

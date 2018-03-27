@@ -30,11 +30,7 @@ footer{
 	display: flex;
 	flex-direction : row;
 	justify-content : space-between;
-	
-}
-footer, footer a{
-	color : white;
-	text-decoration: none;
+	color: #808080;
 }
 footer ul{
 	list-style-type: none;
@@ -44,6 +40,46 @@ footer ul{
 
 /* Navigation */
 
+/* Cacher tous les éléments non nécessaire sur la version PC */
+
+nav input[type=checkbox]{display:none;}
+nav label{display: none;}
+.menu-mobile {display: none;}
+
+/*lorsque la case est cochée, l'ensemble du menu s'affiche*/
+.menu-mobile{
+ display: none;
+}
+
+nav input[type=checkbox]{
+    display: none;
+}
+
+nav input[type=checkbox]:checked ~ ul{
+    display: block;
+}
+/* On ajoute un media query pour l'affichage responsive de notre menu */
+@media screen and (max-width : 380px){
+    .menu-mobile {
+      display:block;
+      color: #009874;
+      text-align: right;
+      padding: 12px 10px;
+    }
+    nav ul{
+      display:none;
+    }
+    nav ul li, nav ul li a{
+      width: 100%;
+      text-align: center;
+    }
+    nav ul li a, nav ul li:hover a{
+      padding: 10px 0px 10px 0px;
+    }
+    
+}
+
+
 nav{
 	display : flex;
 	justify-content : space-between;
@@ -51,9 +87,6 @@ nav{
 	position : absolute;
 	top : 0;
 	width : 100%;
-}
-.menuIcon {
-    display: none;
 }
 nav ul{
 	display : flex;
@@ -72,7 +105,7 @@ nav ul li:last-child{
 nav img{
 	margin : 17px;
 	height : 60px;
-	padding-left : 1.8em;
+	padding-left : 80px;
 }
 nav a{
 	color : #808080;
@@ -80,7 +113,7 @@ nav a{
 }
 /* Header */
 header{
-	height : 100vh;
+	height : 706px;
 	display : flex;
 	flex-direction: column;
 	justify-content : space-around;
@@ -111,18 +144,18 @@ section h1{
 }
 /* Section about */
 
-.intro{
+section .intro{
 	padding : 3em 2em 3em 2em;
-	background-color : #f6f6f6;
+	background-color : #efefef;
 	text-align: center;
 }
 
-.intro p{
+section .intro p{
 	font-family: 'Dosis', sans-serif;
 	font-size: 1.5em;
 	padding: 1em 3em;
 }
-.about-element{
+section .about-element{
 	display: flex;
 	flex-wrap : wrap;
 	justify-content: space-around;
@@ -130,35 +163,36 @@ section h1{
 	padding : 2em 0;
 	visibility : hidden;
 }
-.about-element:nth-child(even){
+section .about-element:nth-child(even){
 	flex-direction: row-reverse;
 }
-.about-element.in-view:nth-child(even) article, .about-element.in-view:nth-child(odd) aside{
+section .about-element.in-view:nth-child(even) article, section .about-element.in-view:nth-child(odd) aside{
 	animation : slideInRight 1.5s 0s 1;
 	visibility: visible;
 }
-.about-element.in-view:nth-child(odd) article, .about-element.in-view:nth-child(even) aside{
+section .about-element.in-view:nth-child(odd) article, section .about-element.in-view:nth-child(even) aside{
 	animation : slideInLeft 1.5s 0s 1;
 	visibility : visible;
 }
-.about-element:nth-child(odd){
+
+
+section .about-element:nth-child(odd){
 	background-color : #eeeeee;
 }
-.about-element article h2{
+section .about-element article h2{
 	color : #009874;
 	padding : 1em 0 1em 0;
 }
-.about-element article{
-	flex : 5;
-	padding : 0 1em;
+section .about-element article{
+	width : 50%;
 }
-.about-element article p{
+section .about-element article p{
 	font-weight: lighter;
 	padding-right: 2.5em;
 	line-height: 2;
 }
-.about-element aside{
-	flex : 4;
+section .about-element aside{
+	width : 40%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -176,31 +210,17 @@ section .about-element aside img{
 	flex-flow: row wrap;
 	justify-content: space-around;
 }
-.appli:before{
-	content: "";
-  display: block;
-	filter: blur(4px);
-  -webkit-filter: blur(4px);
-  background-size:cover;
-  width: 110%;
-  height: 110%;
-  position: relative;
-  top: -5%;
-  left: -5%;
-  right: 0;
-  bottom: 0;
-  z-index: -100;
-}
 #fields .appli{
 	width : 260px;
 	box-shadow: 0.5em 0.8em 0.8em #ebebeb;
 	border-radius: 0.3em;
-	background-color : rgba(236, 147, 0, 0.5);
-	height : 320px;
+	background-color : orange;
 	color : white;
 	padding: 1em 1.2em;
+	margin : 1em 0.5em;
+	line-height : 1.5;
 	visibility : hidden;
-	margin: 1em 0;
+	opacity: 0;
 }
 #fields .appli h2{
 	padding-bottom: 1em;
@@ -219,7 +239,7 @@ section .about-element aside img{
 }
 #fields .appli.in-view{
 	visibility : visible;
-	
+	opacity : 1;
 }
 #fields .appli.in-view:nth-child(1){
 	animation : slideInUp 1.5s 0s 1;
@@ -232,27 +252,6 @@ section .about-element aside img{
 }
 #fields .appli.in-view:nth-child(4){
 	animation : slideInUp 2.1s 0s 1 ease-out;
-}
-
-
-.transport:before{
-	background-image: url("../img/train.jpg");
-}
-.shop:before{
-	background-image: url("../img/mall.jpg");
-}
-.restaurant:before{
-	background-image: url("../img/restaurant.jpg");
-}
-.culture:before{
-	background-image: url("../img/art.jpg");
-}
-
-.appli article{
-	position : relative;
-	left : 0;
-	top : -100%;
-	line-height : 1.5;
 }
 
 #fields footer{
@@ -287,7 +286,7 @@ section .about-element aside img{
 }
 #contact form fieldset input{
 	width:49%;
-	margin: 0 0.1875em 0 0;
+	margin: 0 3px 0 0;
 }
 #contact form fieldset input:nth-child(2){
 	margin-right: 0;
@@ -411,64 +410,4 @@ input[type="submit"]{
 .slideInUp {
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
-}
-
-@media screen and (max-width: 430px){
-	nav img {
-		padding-left : 1em;
-		height : 40px;
-	}
-	nav ul a{
-		display : none;
-	}
-	/*.menuIcon{
-		float : right;
-		display : block;
-	}*/
-	nav.responsive{
-		position: relative;
-	}
-	nav.responsive a.menuIcon{
-		position: absolute;
-    	right: 0;
-    	top: 0;
-	}
-	nav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  	}
-	#about aside{
-		display:none;
-	}
-
-
-	header h1{
-		font-size : 5em;
-	}
-	header h2{
-		font-size : 1.8em;
-		padding : 0 1em;
-		text-align : center;
-	}
-	section {
-		font-size : 1em;
-	}
-	section .intro p{
-		
-		padding : 0 0.5em;
-	}
-	.about-element {
-		margin : 0;
-	}
-	.about-element article{
-		padding-left: 1em;
-	}
-	#contact form fieldset input{
-		width : 98%;
-		margin-bottom: 1em;
-	}
-	input[type="submit"] {
-		width : 60%;
-	}
 }
